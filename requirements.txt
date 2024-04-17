@@ -1,0 +1,17 @@
+transformers
+numpy
+rouge_score
+fire
+openai==0.28.0
+sentencepiece
+peft
+wandb
+deepspeed 
+accelerate
+bitsandbytes
+tensorboardX
+datasets
+jsonlines
+fraction
+vllm
+jsonlines
