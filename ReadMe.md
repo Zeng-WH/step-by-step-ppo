@@ -29,7 +29,7 @@ accelerate launch --config_file=configs/deepspeed_zero2.yaml --num_machines 1  -
     --reward_model_name peiyi9979/math-shepherd-mistral-7b-prm \
     --adafactor=False \
     --tokenizer_name meta-math/MetaMath-Mistral-7B \
-    --save_freq=50 \
+    --save_freq=2 \
     --output_max_length=2048 \
     --batch_size=32 \
     --mini_batch_size 1 \
@@ -55,7 +55,7 @@ accelerate launch --config_file=configs/deepspeed_zero2.yaml --num_machines 1  -
 
 ## Infer Code
 
-以下代码直接vllm便利所有output_model的ckpt进行推理
+以下代码直接vllm遍历所有output_model的ckpt进行推理
 
 ```
 python gsm8k_test_wandb.py --model_dir output_dir/rollout256_backbsz128_sample_data/ --model_id test --start 0 --end 1400 --batch_size 80 --tensor_parallel_size 8
