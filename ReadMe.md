@@ -55,7 +55,7 @@ accelerate launch --config_file=configs/deepspeed_zero2.yaml --num_machines 1  -
 
 ## Infer Code
 
-以下代码直接vllm遍历所有output_model的ckpt进行推理
+直接将训练的output_dir，作为推理时model_dir，会自动遍历文件夹下所有的ckpt进行推理。
 
 ```
 python gsm8k_test_wandb.py --model_dir output_dir/rollout256_backbsz128_sample_data/ --model_id test --start 0 --end 1400 --batch_size 80 --tensor_parallel_size 8
